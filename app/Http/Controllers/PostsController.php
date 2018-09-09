@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App/Post;
 
 class PostsController extends Controller
 {
@@ -24,7 +25,7 @@ class PostsController extends Controller
      */
     public function create()
     {
-        //
+        return('views.create');
     }
 
     /**
@@ -35,6 +36,12 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'title' => 'required',
+            'body' => 'required'
+        ]);
+
+
         $post = new post;
 
         $post->name = $request->name;
@@ -51,7 +58,15 @@ class PostsController extends Controller
      */
     public function show($id)
     {
+        if($post=$post = Post::find($id);{
 
+              return('Posts.show')->with('post',$post);
+
+        }else{
+
+              //
+
+        }
     }
 
     /**
@@ -62,7 +77,12 @@ class PostsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $post = Post::find($id);
+        // Check for correct user
+        //if(auth()->user()->id !==$post->user_id){
+            //return redirect('/posts')->with('error', 'Unauthorized Page');
+        //}
+        return view('posts.edit')->with('post', $post);
     }
 
     /**
@@ -74,7 +94,10 @@ class PostsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required',
+            'body' => 'required'
+        ]);
     }
 
     /**

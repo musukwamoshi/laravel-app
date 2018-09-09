@@ -17,10 +17,19 @@ Route::get('/', function () {
 
 
 Route::get('/','PagesController@index');
-Route::get('/about','PagesController@about');
-Route::get('/contact','PagesController@services');
+Route::get('/about','PagesController@about')->name('about');
+Route::get('/contact','PagesController@services')->name('services');
 
 
 //handles all the Posts crud routes
-Route::resource('posts','PostsController');
+Route::resource('posts','PostsController',[
+    'names' => [
+        'index' => 'posts',
+        'store' => 'post.save',
+        'create'=> 'posts.create',
+        'edit'  => 'posts.edit',
+        'show'  => 'posts.show',
+        'destroy'=> 'posts.delete'
+    ]
+]);
 
