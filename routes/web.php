@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Route::get('/contact','PagesController@contact')->name('contact');
 Route::get('/about','PagesController@about')->name('about');
-Route::get('/contact','PagesController@services')->name('services');
+Route::get('/services','PagesController@services')->name('services');
 
 
 //handles all the Posts crud routes

@@ -9,10 +9,10 @@
 
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{url("css/bootstrap.min.css")}}" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/main.css" rel="stylesheet">
+    <link href="{{url("css/main.css")}}" rel="stylesheet">
     <link href="fonts/fontawesome-all.css" rel="stylesheet">
 
     <title>ClaimYourPet</title>
@@ -22,7 +22,7 @@
   <body>
 
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-                <a class="navbar-brand" href="#">ClaimYourPet</a>
+                <a class="navbar-brand" href="#">Simple-Blog</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
@@ -32,12 +32,12 @@
 
                     <li class="nav-item">
 
-                    <a href="<?php echo base_url('pet/index'); ?>" class="nav-link"  role="button" aria-haspopup="true" aria-expanded="false">HOME</a>
+                    <a href="{{url("/")}}" class="nav-link"  role="button" aria-haspopup="true" aria-expanded="false">Home</a>
 
                     </li>
 
                     <li class="nav-item">
-                      <a class="nav-link" href="<?php echo base_url('pet/add/pet-info'); ?>" role="button" aria-haspopup="true" aria-expanded="false">ADD PET</a>
+                      <a class="nav-link" href="{{url("post/create")}}" role="button" aria-haspopup="true" aria-expanded="false">add post</a>
                     </li>
 
 
