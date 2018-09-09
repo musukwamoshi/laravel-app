@@ -13,19 +13,30 @@
 	     <div class="card">
            <div class="card-body">
 
-	     <p>This is a simple blog posts application.</p>
-
-		   </div>
-		 </div>
 
 
-	<div class="clearfix visible-xs-block"></div>
-    <div class="col-xs-1 col-sm-1"></div>
 
-    </div>
 
- </div>
+
+
+
+            </div>
+        </div>
+
+
+   <div class="clearfix visible-xs-block"></div>
+   <div class="col-xs-1 col-sm-1"></div>
+
+   </div>
+
+</div>
 
 
 
 @endsection
+
+
+
+
+
+

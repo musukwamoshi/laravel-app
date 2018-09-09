@@ -13,6 +13,7 @@
                         @if (count($posts) > 0)
 
                                 <p>{{ $post->title }}</p>
+                                <p>{{ $post->body }}</p>
 
 
                         @endif

@@ -15,8 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//Static page routes
 
-Route::get('/','PagesController@index');
+Route::get('/contact','PagesController@contact')->name('contact');
 Route::get('/about','PagesController@about')->name('about');
 Route::get('/contact','PagesController@services')->name('services');
 

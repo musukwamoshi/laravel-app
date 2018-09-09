@@ -26,4 +26,4 @@
         <div class="col-xs-3 col-sm-2"></div>
 
     </div>
-@sendsection
+@endsection
