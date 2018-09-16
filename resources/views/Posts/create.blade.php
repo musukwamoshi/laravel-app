@@ -10,8 +10,7 @@
                 <div class="card">
                     <div class="card-body">
 
-                        {!! Form::open(['url' => 'foo/bar']) !!}
-
+                        {!! Form::open(['url' => 'posts/create']) !!}
 
                             echo Form::text('title','',['class' => 'fom-control','placeholder' => 'post title']);
                             echo Form::text('body','',['class' => 'fom-control','placeholder' => 'post body']);
@@ -26,4 +25,5 @@
         <div class="col-xs-3 col-sm-2"></div>
 
     </div>
+
 @endsection

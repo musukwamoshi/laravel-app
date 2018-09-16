@@ -6,8 +6,9 @@ use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
-   public function index(){
+   public function contact(){
 
+        return view('Pages.contact');
 
    }
 

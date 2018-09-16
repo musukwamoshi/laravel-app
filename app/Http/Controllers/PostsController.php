@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App/Post;
+use App\Post;
 
 class PostsController extends Controller
 {
@@ -58,7 +58,7 @@ class PostsController extends Controller
      */
     public function show($id)
     {
-        if($post=$post = Post::find($id);{
+        if($post=$post = Post::find($id)){
 
               return('Posts.show')->with('post',$post);
 
@@ -94,10 +94,20 @@ class PostsController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        //validate data fields
         $this->validate($request, [
             'title' => 'required',
             'body' => 'required'
         ]);
+        //find the post
+        $post = Post::find($id);
+        //update said post
+        $post->name = $request->name;
+        $post->body = $request->body;
+        //save the changes
+        $post->save();
+
     }
 
     /**
@@ -108,6 +118,10 @@ class PostsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if (Post::destroy($id)){
+
+            return view('Post.index');
+
+        }
     }
 }

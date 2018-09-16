@@ -12,7 +12,7 @@
     <link href="{{url("css/bootstrap.min.css")}}" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="{{url("css/main.css")}}" rel="stylesheet">
+    <link href="{{url('css/main.css')}}" rel="stylesheet">
     <link href="fonts/fontawesome-all.css" rel="stylesheet">
 
     <title>ClaimYourPet</title>
@@ -37,21 +37,16 @@
                     </li>
 
                     <li class="nav-item">
-                      <a class="nav-link" href="{{url("post/create")}}" role="button" aria-haspopup="true" aria-expanded="false">add post</a>
+                      <a class="nav-link" href="{{url('posts/create')}}" role="button" aria-haspopup="true" aria-expanded="false">add post</a>
                     </li>
 
 
                    <li class="nav-item">
 
-                    <a class="nav-link"  href="<?php echo base_url('pet/contact'); ?>"   role="button" aria-haspopup="true" aria-expanded="false">CONTACT</a>
+                    <a class="nav-link"  href="<?php echo base_url('posts/contact'); ?>"   role="button" aria-haspopup="true" aria-expanded="false">CONTACT</a>
 
                    </li>
 
-                  <li class="nav-item">
-
-                    <a class="nav-link" href="<?php echo base_url('pet/about'); ?>" role="button" aria-haspopup="true" aria-expanded="false">ABOUT</a>
-
-                  </li>
 
                   </ul>
 
@@ -75,7 +70,7 @@
                            <?php
 
                               $attributes = array('class' => 'form-inline my-2 my-md-0');
-                              echo form_open('pet/results');
+                              echo form_open('post/results');
 
                            ?>
 
@@ -148,9 +143,9 @@
                     </ul>
 
                     <ul class="footer-list">
-                          <li> <a  href="<?php echo base_url('listing/payment-info'); ?>"  role="button" aria-haspopup="true" aria-expanded="false"><strong>How To Pay</strong></a></li>
-                          <li> <a  href="<?php echo base_url('listing/terms-and-conditions'); ?>"  role="button" aria-haspopup="true" aria-expanded="false"><strong>Terms and Conditions</strong></a></li>
-                          <li> <a  href="<?php echo base_url('listing/payment-info'); ?>"  role="button" aria-haspopup="true" aria-expanded="false"><strong>Help</strong></a></li>
+
+                          <li> <a  href="<?php echo base_url('posts/terms-and-conditions'); ?>"  role="button" aria-haspopup="true" aria-expanded="false"><strong>Terms and Conditions</strong></a></li>
+                          <li> <a  href="<?php echo base_url('posts/about'); ?>"  role="button" aria-haspopup="true" aria-expanded="false"><strong>Help</strong></a></li>
 
 
                     </ul>
