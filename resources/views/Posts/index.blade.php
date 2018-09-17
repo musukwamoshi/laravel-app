@@ -15,14 +15,22 @@
 @foreach ($posts as $post)
    <div class="card">
        <div class="card-body">
-            <p>{{ $post->title }}</p>
+            <p><a href="posts/{{posts->id}}">{{ $post->title }}</a></p>
+            <a href="posts/{{posts->id}}/edit" class="btn btn-primary">Edit</a>
        </div>
     </div>
 @endforeach
 
-@endif
+@else
 
-<!-- Optional: clear the XS cols if their content doesn't match in height -->
+<div class="card">
+    <div class="card-body">
+         <p>There are currently no posts to view.</p>
+    </div>
+ </div>
+
+
+@endif
             <div class="clearfix visible-xs-block"></div>
         <div class="col-xs-3 col-sm-2"></div>
 

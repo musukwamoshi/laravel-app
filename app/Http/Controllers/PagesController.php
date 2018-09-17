@@ -6,9 +6,10 @@ use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
+
    public function contact(){
 
-        return view('Pages.contact');
+        return view('Pages.contact')->with('title','Contact Us');
 
    }
 
@@ -28,6 +29,12 @@ class PagesController extends Controller
    }
 
 
+   public function terms(){
+
+    //return terms and conditions view
+    return view('Pages.terms')->with('title','Terms and Conditions');
+
+   }
 
 
 

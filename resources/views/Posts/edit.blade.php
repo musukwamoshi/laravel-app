@@ -1,6 +1,9 @@
 @extends('Layouts.app')
 
+
+
 @section('content')
+<h3>Edit Posts</h3>
 
 <div class="form-group"></div>
     <div class="row">
@@ -10,14 +13,15 @@
                 <div class="card">
                     <div class="card-body">
 
-                        {!! Form::open(['url' => 'posts/create']) !!}
+                        {!! Form::open(['url' => 'PostsController@create',$post->id]) !!}
 
                             {{Form::label('title','Title')}}
-                            {{Form::text('title','',['class' => 'fom-control','placeholder' => 'post title']) }}
+                            {{Form::text('title',$post->id,['class' => 'form-control','placeholder' => 'post title'])}}
 
                             {{Form::label('body','Body')}}
-                            {{Form::textarea('body','',['class' => 'fom-control','placeholder' => 'post body']) }}
+                            {{Form::textarea('body',$post->body,['class' => 'fom-control','placeholder' => 'post body'])}}
 
+                            {{Form::hidden('_method','PUT')}}
                             {{Form::submit('Submit',['class'=> 'btn btn-primary'])}}
 
 
@@ -30,5 +34,7 @@
         <div class="col-xs-3 col-sm-2"></div>
 
     </div>
+
+
 
 @endsection

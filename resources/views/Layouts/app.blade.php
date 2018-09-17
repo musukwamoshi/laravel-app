@@ -11,7 +11,6 @@
     <!-- Bootstrap core CSS -->
     <link href="{{url("css/bootstrap.min.css")}}" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
     <link href="{{url('css/main.css')}}" rel="stylesheet">
     <link href="fonts/fontawesome-all.css" rel="stylesheet">
 
@@ -43,7 +42,7 @@
 
                    <li class="nav-item">
 
-                    <a class="nav-link"  href="<?php echo base_url('posts/contact'); ?>"   role="button" aria-haspopup="true" aria-expanded="false">CONTACT</a>
+                    <a class="nav-link"  href="<?php echo base_url('/contact'); ?>"   role="button" aria-haspopup="true" aria-expanded="false">CONTACT</a>
 
                    </li>
 
@@ -144,8 +143,8 @@
 
                     <ul class="footer-list">
 
-                          <li> <a  href="<?php echo base_url('posts/terms-and-conditions'); ?>"  role="button" aria-haspopup="true" aria-expanded="false"><strong>Terms and Conditions</strong></a></li>
-                          <li> <a  href="<?php echo base_url('posts/about'); ?>"  role="button" aria-haspopup="true" aria-expanded="false"><strong>Help</strong></a></li>
+                          <li> <a  href="<?php echo base_url('/terms-and-conditions'); ?>"  role="button" aria-haspopup="true" aria-expanded="false"><strong>Terms and Conditions</strong></a></li>
+                          <li> <a  href="<?php echo base_url('/about'); ?>"  role="button" aria-haspopup="true" aria-expanded="false"><strong>Help</strong></a></li>
 
 
                     </ul>
