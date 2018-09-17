@@ -48,6 +48,8 @@ class PostsController extends Controller
         $post->body = $request->body;
 
         $post->save();
+
+        return redirect('/posts')->with('success','The post was successfully added.');
     }
 
     /**
@@ -58,7 +60,7 @@ class PostsController extends Controller
      */
     public function show($id)
     {
-        $post = Post::find($id))
+        $post = Post::find($id);
 
         return('Posts.show')->with('post',$post);
 
@@ -97,11 +99,15 @@ class PostsController extends Controller
         ]);
         //find the post
         $post = Post::find($id);
+
         //update said post
         $post->name = $request->name;
         $post->body = $request->body;
+
         //save the changes
         $post->save();
+
+        return redirect('/posts')->with('success','Post Updated');
 
     }
 
@@ -113,10 +119,10 @@ class PostsController extends Controller
      */
     public function destroy($id)
     {
-        if (Post::destroy($id)){
+        (Post::destroy($id));
 
-            return view('Post.index');
+        return view('Post.index');
 
-        }
+
     }
 }

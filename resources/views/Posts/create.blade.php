@@ -10,7 +10,7 @@
                 <div class="card">
                     <div class="card-body">
 
-                        {!! Form::open(['url' => 'posts/create']) !!}
+                        {!! Form::open(['url' => 'posts/create'],'method' => 'POST') !!}
 
                             {{Form::label('title','Title')}}
                             {{Form::text('title','',['class' => 'fom-control','placeholder' => 'post title']) }}

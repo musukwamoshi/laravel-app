@@ -15,6 +15,11 @@
                                 <p>{{ $post->title }}</p>
                                 <p>{{ $post->body }}</p>
 
+                                <a href="posts/{{posts->id}}/edit" class="btn btn-primary">Edit</a>
+                                {!! Form::open(['url' => 'PostsController@destroy',$post->id],'method' => 'POST','class' => 'pull-left') !!}
+                                    {{Form::hidden('_method','DELETE')}}
+                                    {{Form::submit('Submit',['class'=> 'btn btn-danger'])}}
+                                {!! Form::close() !!}
 
                         @endif
                     </div>
