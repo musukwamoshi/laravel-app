@@ -58,15 +58,10 @@ class PostsController extends Controller
      */
     public function show($id)
     {
-        if($post=$post = Post::find($id)){
+        $post = Post::find($id))
 
-              return('Posts.show')->with('post',$post);
+        return('Posts.show')->with('post',$post);
 
-        }else{
-
-              //
-
-        }
     }
 
     /**
