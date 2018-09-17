@@ -16,7 +16,7 @@
    <div class="card">
        <div class="card-body">
             <p><a href="posts/{{posts->id}}">{{ $post->title }}</a></p>
-            <a href="posts/{{posts->id}}/edit" class="btn btn-primary">Edit</a>
+
        </div>
     </div>
 @endforeach

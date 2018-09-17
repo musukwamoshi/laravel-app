@@ -119,9 +119,12 @@ class PostsController extends Controller
      */
     public function destroy($id)
     {
-        (Post::destroy($id));
 
-        return view('Post.index');
+        //delete post with specified id
+        Post::destroy($id);
+
+        //redirect user after delete
+        return redirect('/posts')->with('success','The post was successfully deleted');
 
 
     }
