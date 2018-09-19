@@ -17,14 +17,14 @@ class PagesController extends Controller
    public function about(){
 
     //return the about view
-    return view('Pages.about')->with('title','About Us');
+        return view('Pages.about')->with('title','About Us');
 
    }
 
    public function services(){
 
     //return services view
-    return view('Pages.services')->with('title','Services');
+        return view('Pages.services')->with('title','Services');
 
    }
 
@@ -32,7 +32,7 @@ class PagesController extends Controller
    public function terms(){
 
     //return terms and conditions view
-    return view('Pages.terms')->with('title','Terms and Conditions');
+        return view('Pages.terms')->with('title','Terms and Conditions');
 
    }
 
