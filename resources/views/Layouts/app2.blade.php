@@ -124,10 +124,7 @@
         <script src="jquery-3.2.1.min.js"></script>
         <script src="bootstrap.min.js"></script>
         <script src="main.js"></script>
-        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBgOj89D0NAiPkjMWZGygkh8hWLDWeVvVQ"  defer ></script>
 
-
-        <!--&key=AIzaSyBgOj89D0NAiPkjMWZGygkh8hWLDWeVvVQ -->
 
           <footer class="footer" >
 
