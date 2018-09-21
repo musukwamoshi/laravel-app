@@ -4,9 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use Illuminate\Facades\Storage;
 
 class PostsController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth',['except',['index','show']]);
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -25,6 +33,7 @@ class PostsController extends Controller
      */
     public function create()
     {
+
         return('views.create');
     }
 
@@ -38,14 +47,34 @@ class PostsController extends Controller
     {
         $this->validate($request, [
             'title' => 'required',
-            'body' => 'required'
+            'body' => 'required',
+            'cover_image' => 'image|nullable|max:1999'
         ]);
+
+        // Handle File Upload
+        if($request->hasFile('cover_image')){
+            // Get filename with the extension
+            $filenameWithExt = $request->file('cover_image')->getClientOriginalName();
+            // Get just filename
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            // Get just ext
+            $extension = $request->file('cover_image')->getClientOriginalExtension();
+            // ensure filenames are always different
+            $fileNameToStore= $filename.'_'.time().'.'.$extension;
+            // Upload Image
+            $path = $request->file('cover_image')->storeAs('public/cover_images', $fileNameToStore);
+        } else {
+            $fileNameToStore = 'noimage.jpg';
+        }
 
 
         $post = new post;
 
         $post->name = $request->name;
         $post->body = $request->body;
+        $post->user_id = auth()->user()->id;
+        $post->cover_image = $fileNameToStore;
+
 
         $post->save();
 
@@ -75,10 +104,12 @@ class PostsController extends Controller
     public function edit($id)
     {
         $post = Post::find($id);
+
         // Check for correct user
-        //if(auth()->user()->id !==$post->user_id){
-            //return redirect('/posts')->with('error', 'Unauthorized Page');
-        //}
+        if(auth()->user()->id !==$post->user_id){
+            return redirect('/posts')->with('error', 'Sorry you are not authorized to access this page!');
+        }
+
         return view('posts.edit')->with('post', $post);
     }
 
@@ -119,6 +150,15 @@ class PostsController extends Controller
      */
     public function destroy($id)
     {
+
+        // Check for correct user
+        if(auth()->user()->id !==$post->user_id){
+            return redirect('/posts')->with('error', 'Unauthorized Page');
+        }
+        if($post->cover_image != 'noimage.jpg'){
+            // Delete Image
+            Storage::delete('public/cover_images/'.$post->cover_image);
+        }
 
         //delete post with specified id
         Post::destroy($id);

@@ -10,13 +10,17 @@
                 <div class="card">
                     <div class="card-body">
 
-                        {!! Form::open(['url' => 'posts/create'],'method' => 'POST') !!}
+                        {!! Form::open(['url' => 'posts/create'],'method' => 'POST','enctype' => 'multipart/form-data') !!}
 
                             {{Form::label('title','Title')}}
                             {{Form::text('title','',['class' => 'fom-control','placeholder' => 'post title']) }}
 
                             {{Form::label('body','Body')}}
                             {{Form::textarea('body','',['class' => 'fom-control','placeholder' => 'post body']) }}
+
+                            <div class="form-group">
+                                {{Form::file('cover_image')}}
+                            </div>
 
                             {{Form::submit('Submit',['class'=> 'btn btn-primary'])}}
 
